@@ -26,8 +26,8 @@ import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
 
-	. "github.com/gonvenience/text"
 	. "github.com/gonvenience/bunt"
+	. "github.com/gonvenience/text"
 )
 
 var _ = Describe("Generate random strings with fixed length", func() {
