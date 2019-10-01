@@ -68,16 +68,21 @@ func RandomStringWithPrefix(prefix string, length int) string {
 }
 
 // FixedLength expands or trims the given text to the provided length
-func FixedLength(text string, length int) string {
+func FixedLength(text string, length int, ellipsisOverride ...string) string {
+	var ellipsis = " [...]"
+	if len(ellipsisOverride) > 0 {
+		ellipsis = ellipsisOverride[0]
+	}
+
 	textLength := bunt.PlainTextLength(text)
+	ellipsisLen := bunt.PlainTextLength(ellipsis)
 
 	switch {
 	case textLength < length: // padding required
 		return text + strings.Repeat(" ", length-textLength)
 
 	case textLength > length:
-		const ellipsis = " [...]"
-		return bunt.Substring(text, 0, length-len(ellipsis)) + ellipsis
+		return bunt.Substring(text, 0, length-ellipsisLen) + ellipsis
 
 	default:
 		return text

@@ -88,6 +88,11 @@ var _ = Describe("Generate random strings with fixed length", func() {
 
 			Expect(fmt.Sprintf("%#v", actual)).To(BeEquivalentTo(fmt.Sprintf("%#v", expected)))
 		})
+
+		It("should allow for a custom ellipsis", func() {
+			Expect(FixedLength("This text is too long", 8, Sprintf("DimGray{...}"))).
+				To(BeEquivalentTo(Sprintf("This DimGray{...}")))
+		})
 	})
 
 	Context("creating proper texts", func() {
