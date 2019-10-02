@@ -123,16 +123,26 @@ func Plural(amount int, text ...string) string {
 
 // List creates a list of the string entries with commas and an ending "and"
 func List(list []string) string {
-	var buf bytes.Buffer
-	for idx, entry := range list {
-		fmt.Fprint(&buf, entry)
+	switch len(list) {
+	case 1:
+		return list[0]
 
-		if idx < len(list)-2 {
-			fmt.Fprint(&buf, ", ")
-		} else if idx < len(list)-1 {
-			fmt.Fprint(&buf, ", and ")
+	case 2:
+		return fmt.Sprintf("%s and %s", list[0], list[1])
+
+	default:
+		var buf bytes.Buffer
+		for idx, entry := range list {
+			fmt.Fprint(&buf, entry)
+
+			if idx < len(list)-2 {
+				fmt.Fprint(&buf, ", ")
+
+			} else if idx < len(list)-1 {
+				fmt.Fprint(&buf, ", and ")
+			}
 		}
-	}
 
-	return buf.String()
+		return buf.String()
+	}
 }
