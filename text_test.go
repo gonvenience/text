@@ -119,7 +119,22 @@ var _ = Describe("Generate random strings with fixed length", func() {
 	})
 
 	Context("Creating human readable lists", func() {
-		It("should create a human readable list of strings", func() {
+		It("should create a human readable list of no strings", func() {
+			Expect(List([]string{})).
+				To(BeEquivalentTo(""))
+		})
+
+		It("should create a human readable list of one strings", func() {
+			Expect(List([]string{"one"})).
+				To(BeEquivalentTo("one"))
+		})
+
+		It("should create a human readable list of two strings", func() {
+			Expect(List([]string{"one", "two"})).
+				To(BeEquivalentTo("one and two"))
+		})
+
+		It("should create a human readable list of multiple strings", func() {
 			Expect(List([]string{"one", "two", "three", "four"})).
 				To(BeEquivalentTo("one, two, three, and four"))
 		})
