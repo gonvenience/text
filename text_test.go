@@ -95,7 +95,7 @@ var _ = Describe("Generate random strings with fixed length", func() {
 		})
 	})
 
-	Context("creating proper texts", func() {
+	Context("Creating proper plurals", func() {
 		It("should return human readable plurals", func() {
 			Expect(Plural(0, "foobar")).To(BeEquivalentTo("no foobars"))
 			Expect(Plural(1, "foobar")).To(BeEquivalentTo("one foobar"))
@@ -115,6 +115,13 @@ var _ = Describe("Generate random strings with fixed length", func() {
 
 			Expect(Plural(1, "basis", "bases")).To(BeEquivalentTo("one basis"))
 			Expect(Plural(2, "basis", "bases")).To(BeEquivalentTo("two bases"))
+		})
+	})
+
+	Context("Creating human readable lists", func() {
+		It("should create a human readable list of strings", func() {
+			Expect(List([]string{"one", "two", "three", "four"})).
+				To(BeEquivalentTo("one, two, three, and four"))
 		})
 	})
 })
