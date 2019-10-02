@@ -24,6 +24,7 @@ Package text contains convenience functions for creating strings
 package text
 
 import (
+	"bytes"
 	"fmt"
 	"math/rand"
 	"strconv"
@@ -118,4 +119,20 @@ func Plural(amount int, text ...string) string {
 
 		return fmt.Sprintf("%s %s", number, text[1])
 	}
+}
+
+// List creates a list of the string entries with commas and an ending "and"
+func List(list []string) string {
+	var buf bytes.Buffer
+	for idx, entry := range list {
+		fmt.Fprint(&buf, entry)
+
+		if idx < len(list)-2 {
+			fmt.Fprint(&buf, ", ")
+		} else if idx < len(list)-1 {
+			fmt.Fprint(&buf, ", and ")
+		}
+	}
+
+	return buf.String()
 }
