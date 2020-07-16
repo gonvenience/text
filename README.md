@@ -6,5 +6,6 @@
 [![Codecov](https://img.shields.io/codecov/c/github/gonvenience/text/main.svg)](https://codecov.io/gh/gonvenience/text)
 [![PkgGoDev](https://pkg.go.dev/badge/github.com/gonvenience/text)](https://pkg.go.dev/github.com/gonvenience/text)
 [![Release](https://img.shields.io/github/release/gonvenience/text.svg)](https://github.com/gonvenience/text/releases/latest)
+![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/gonvenience/text)
 
 Golang package with convenience functions for strings
