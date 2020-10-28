@@ -73,7 +73,7 @@ var _ = Describe("Generate random strings with fixed length", func() {
 		})
 
 		It("should trim the text if the text alone exceeds the provided desired length", func() {
-			Expect(FixedLength("This text is too long", 10)).To(BeEquivalentTo("This [...]"))
+			Expect(FixedLength("This text is too long", 10)).To(BeEquivalentTo("This t […]"))
 		})
 
 		It("should return the text as-is if it already has the perfect length", func() {
@@ -82,9 +82,9 @@ var _ = Describe("Generate random strings with fixed length", func() {
 
 		It("should work with text containing ANSI sequences", func() {
 			// "This text is too long" 21 characters
-			// "This text is [...]" 18 characters
+			// "This text is t […]" 18 characters
 			actual := FixedLength(Sprintf("*This* text is too long"), 18)
-			expected := Sprintf("*This* text is [...]")
+			expected := Sprintf("*This* text is t […]")
 
 			Expect(fmt.Sprintf("%#v", actual)).To(BeEquivalentTo(fmt.Sprintf("%#v", expected)))
 		})
