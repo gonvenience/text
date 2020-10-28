@@ -1,6 +1,6 @@
 module github.com/gonvenience/text
 
-go 1.12
+go 1.15
 
 require (
 	github.com/gonvenience/bunt v1.1.3
