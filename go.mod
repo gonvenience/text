@@ -4,6 +4,6 @@ go 1.15
 
 require (
 	github.com/gonvenience/bunt v1.3.2
-	github.com/onsi/ginkgo v1.15.2
-	github.com/onsi/gomega v1.11.0
+	github.com/onsi/ginkgo v1.16.2
+	github.com/onsi/gomega v1.13.0
 )
