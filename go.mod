@@ -3,7 +3,7 @@ module github.com/gonvenience/text
 go 1.17
 
 require (
-	github.com/gonvenience/bunt v1.3.2
+	github.com/gonvenience/bunt v1.3.3
 	github.com/onsi/ginkgo v1.16.5
 	github.com/onsi/gomega v1.18.0
 )
