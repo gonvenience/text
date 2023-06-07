@@ -5,7 +5,7 @@ go 1.19
 require (
 	github.com/gonvenience/bunt v1.3.5
 	github.com/onsi/ginkgo/v2 v2.10.0
-	github.com/onsi/gomega v1.27.7
+	github.com/onsi/gomega v1.27.8
 )
 
 require (
