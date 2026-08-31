@@ -5,7 +5,7 @@ go 1.25.0
 require (
 	github.com/gonvenience/bunt v1.4.3
 	github.com/onsi/ginkgo/v2 v2.32.1
-	github.com/onsi/gomega v1.42.1
+	github.com/onsi/gomega v1.43.0
 )
 
 require (
