@@ -4,7 +4,7 @@ go 1.26.0
 
 require (
 	github.com/gonvenience/bunt v1.4.3
-	github.com/onsi/ginkgo/v2 v2.32.2
+	github.com/onsi/ginkgo/v2 v2.33.0
 	github.com/onsi/gomega v1.43.0
 )
 
